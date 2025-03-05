@@ -1,0 +1,33 @@
+{% extends "base.html" %}
+
+{% block title %}Acasă - Pontaj Facial{% endblock %}
+
+{% block content %}
+<h1 class="text-center mb-4">✅ Sistem Pontaj Facial</h1>
+
+{% if model_status %}
+<div class="alert alert-danger alert-dismissible fade show" role="alert">
+    {{ model_status }}
+    <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+</div>
+{% endif %}
+
+{% if message %}
+<div class="alert alert-info alert-dismissible fade show" role="alert">
+    {{ message }}
+    <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+</div>
+{% endif %}
+
+<div class="text-center">
+    <button onclick="window.location.href='/start_check_in'" class="btn btn-outline-primary btn-lg m-2">
+        🔵 Începere Pontare
+    </button>
+    <button onclick="window.location.href='/start_check_out'" class="btn btn-outline-danger btn-lg m-2">
+        🔴 Începere De-pontare
+    </button>
+    <a href="{{ url_for('delete_today_attendance') }}" class="btn btn-outline-warning btn-lg m-2">
+        🗑️ Șterge Pontajele Zilei
+    </a>
+</div>
+{% endblock %}

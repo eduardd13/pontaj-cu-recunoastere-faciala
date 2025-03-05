@@ -1,0 +1,15 @@
+{% extends "base.html" %}
+
+{% block title %}Rapoarte{% endblock %}
+
+{% block content %}
+    <h1 class="text-center mb-4">📊 Rapoarte</h1>
+
+    <div class="text-center">
+        <p>Descarcă rapoartele cu pontajele angajaților:</p>
+
+        <a href="{{ url_for('generate_csv') }}" class="btn btn-outline-primary btn-lg m-2">📁 Exportă Raport CSV</a>
+
+        <a href="{{ url_for('generate_excel') }}" class="btn btn-outline-success btn-lg m-2">📊 Exportă Raport Excel</a>
+    </div>
+{% endblock %}

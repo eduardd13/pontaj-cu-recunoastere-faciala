@@ -1,0 +1,61 @@
+{% extends "base.html" %}
+
+{% block title %}Lista Angajați{% endblock %}
+
+{% block content %}
+
+<h1 class="text-center mb-4">👨‍💼 Lista Angajați</h1>
+
+<!-- ✅ Mesaje de succes/eroare -->
+{% if request.args.get('success') == 'added' %}
+<div class="alert alert-success alert-dismissible fade show" role="alert">
+    ✅ Angajat adăugat și captura facială finalizată!
+    <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+</div>
+{% elif request.args.get('success') == 'deleted' %}
+<div class="alert alert-danger alert-dismissible fade show" role="alert">
+    ❌ Angajat șters și pozele eliminate!
+    <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+</div>
+{% elif request.args.get('success') == 'updated' %}
+<div class="alert alert-warning alert-dismissible fade show" role="alert">
+    ✏️ Angajat actualizat cu succes!
+    <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+</div>
+{% endif %}
+
+<!-- ✅ Buton Adaugă Angajat -->
+<a href="{{ url_for('add_employee') }}" class="btn btn-success mb-3">➕ Adaugă Angajat</a>
+
+<!-- ✅ Tabel Angajați -->
+<table class="table table-striped table-bordered">
+    <thead class="table-dark">
+        <tr>
+            <th>ID</th>
+            <th>Nume</th>
+            <th>Email</th>
+            <th>Departament</th>
+            <th>Data Angajării</th>
+            <th>Detalii</th>
+            <th>Acțiuni</th>
+        </tr>
+    </thead>
+    <tbody>
+        {% for employee in employees %}
+        <tr>
+            <td>{{ employee[0] }}</td>
+            <td>{{ employee[1] }}</td>
+            <td>{{ employee[2] }}</td>
+            <td>{{ employee[3] }}</td>
+            <td>{{ employee[4] }}</td>
+            <td>{{ employee[5] }}</td>
+            <td>
+                <a href="{{ url_for('update_employee', id=employee[0]) }}" class="btn btn-warning btn-sm">✏️ Editare</a>
+                <a href="{{ url_for('delete_employee', id=employee[0]) }}" class="btn btn-danger btn-sm">❌ Ștergere</a>
+            </td>
+        </tr>
+        {% endfor %}
+    </tbody>
+</table>
+
+{% endblock %}

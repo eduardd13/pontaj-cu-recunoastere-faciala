@@ -1,0 +1,28 @@
+{% extends "base.html" %}
+
+{% block title %}Pontaje Zilnice{% endblock %}
+
+{% block content %}
+    <h1 class="text-center mb-4">📅 Pontaje Zilnice</h1>
+
+    <table class="table table-striped table-bordered">
+        <thead class="table-dark">
+            <tr>
+                <th>Nume Angajat</th>
+                <th>Data</th>
+                <th>Ora Intrare</th>
+                <th>Ora Ieșire</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for record in attendance %}
+            <tr>
+                <td>{{ record[0] }}</td>
+                <td>{{ record[1] }}</td>
+                <td>{{ record[2] }}</td>
+                <td>{{ record[3] }}</td>
+            </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+{% endblock %}

@@ -1,0 +1,33 @@
+{% extends "base.html" %}
+
+{% block title %}Adaugă Angajat{% endblock %}
+
+{% block content %}
+    <h1 class="text-center mb-4">➕ Adaugă Angajat Nou</h1>
+
+    <form method="post" class="row g-3">
+        <div class="col-md-6">
+            <label class="form-label">Nume:</label>
+            <input type="text" name="nume" class="form-control" required>
+        </div>
+        <div class="col-md-6">
+            <label class="form-label">Email:</label>
+            <input type="email" name="email" class="form-control" required>
+        </div>
+        <div class="col-md-6">
+            <label class="form-label">Departament:</label>
+            <input type="text" name="departament" class="form-control">
+        </div>
+        <div class="col-md-6">
+            <label class="form-label">Data Angajării:</label>
+            <input type="date" name="data_angajarii" class="form-control">
+        </div>
+        <div class="col-12">
+            <label class="form-label">Detalii:</label>
+            <textarea name="detalii" class="form-control"></textarea>
+        </div>
+        <div class="col-12 text-center">
+            <button type="submit" class="btn btn-success mt-3">Salvează</button>
+        </div>
+    </form>
+{% endblock %}
