@@ -3,31 +3,39 @@
 {% block title %}Adaugă Angajat{% endblock %}
 
 {% block content %}
-    <h1 class="text-center mb-4">➕ Adaugă Angajat Nou</h1>
+<h1 class="text-center mb-4">➕ Adaugă Angajat Nou</h1>
 
-    <form method="post" class="row g-3">
-        <div class="col-md-6">
-            <label class="form-label">Nume:</label>
-            <input type="text" name="nume" class="form-control" required>
-        </div>
-        <div class="col-md-6">
-            <label class="form-label">Email:</label>
-            <input type="email" name="email" class="form-control" required>
-        </div>
-        <div class="col-md-6">
-            <label class="form-label">Departament:</label>
-            <input type="text" name="departament" class="form-control">
-        </div>
-        <div class="col-md-6">
-            <label class="form-label">Data Angajării:</label>
-            <input type="date" name="data_angajarii" class="form-control">
-        </div>
-        <div class="col-12">
-            <label class="form-label">Detalii:</label>
-            <textarea name="detalii" class="form-control"></textarea>
-        </div>
-        <div class="col-12 text-center">
-            <button type="submit" class="btn btn-success mt-3">Salvează</button>
-        </div>
-    </form>
+{% if message %}
+<div class="alert alert-info alert-dismissible fade show" role="alert">
+    {{ message }}
+    <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+</div>
+{% endif %}
+
+{% if not is_render %}
+<form method="POST" action="/add_employee">
+    <div class="mb-3">
+        <label for="name" class="form-label">Nume:</label>
+        <input type="text" class="form-control" id="name" name="name" required>
+    </div>
+    <div class="mb-3">
+        <label for="email" class="form-label">Email:</label>
+        <input type="email" class="form-control" id="email" name="email" required>
+    </div>
+    <div class="mb-3">
+        <label for="department" class="form-label">Departament:</label>
+        <input type="text" class="form-control" id="department" name="department" required>
+    </div>
+    <div class="mb-3">
+        <label for="info" class="form-label">Alte informații:</label>
+        <textarea class="form-control" id="info" name="info"></textarea>
+    </div>
+    <button type="submit" class="btn btn-success">Salvează Angajatul și Capturează Fața</button>
+</form>
+{% else %}
+    <div class="alert alert-warning mt-4 text-center">
+        ⚠️ Face capture is disabled in the online version. Please add employees locally.
+    </div>
+{% endif %}
+
 {% endblock %}
