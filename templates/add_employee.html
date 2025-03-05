@@ -15,20 +15,24 @@
 {% if not is_render %}
 <form method="POST" action="/add_employee">
     <div class="mb-3">
-        <label for="name" class="form-label">Nume:</label>
-        <input type="text" class="form-control" id="name" name="name" required>
+        <label for="nume" class="form-label">Nume:</label>
+        <input type="text" class="form-control" id="nume" name="nume" required>
     </div>
     <div class="mb-3">
         <label for="email" class="form-label">Email:</label>
         <input type="email" class="form-control" id="email" name="email" required>
     </div>
     <div class="mb-3">
-        <label for="department" class="form-label">Departament:</label>
-        <input type="text" class="form-control" id="department" name="department" required>
+        <label for="departament" class="form-label">Departament:</label>
+        <input type="text" class="form-control" id="departament" name="departament" required>
     </div>
     <div class="mb-3">
-        <label for="info" class="form-label">Alte informații:</label>
-        <textarea class="form-control" id="info" name="info"></textarea>
+        <label for="data_angajarii" class="form-label">Data Angajării:</label>
+        <input type="date" class="form-control" id="data_angajarii" name="data_angajarii" required>
+    </div>
+    <div class="mb-3">
+        <label for="detalii" class="form-label">Alte informații:</label>
+        <textarea class="form-control" id="detalii" name="detalii"></textarea>
     </div>
     <button type="submit" class="btn btn-success">Salvează Angajatul și Capturează Fața</button>
 </form>
