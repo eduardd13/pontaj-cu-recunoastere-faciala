@@ -1,6 +1,7 @@
+------------------------------------------------------------------------------------------------------------------
 # Face Recognition Attendance System
 A facial recognition-based attendance application developed in Python with a Flask web interface. This system allows employees to clock in and out using face detection and recognition.
-
+------------------------------------------------------------------------------------------------------------------
 ** Features**
  Employee check-in and check-out using facial recognition.
  Daily attendance records (date, check-in time, check-out time).
@@ -32,4 +33,32 @@ Duplicate Protection:
 An employee cannot check in twice without checking out first.
 Multiple shifts per day are allowed.
 Record Management: The admin can manage employees and attendance records directly from the web interface.
+------------------------------------------------------------------------------------------------------------------
+** Concepts Covered **
+Face detection using Haar Cascades.
+Face recognition with LBPH (Local Binary Pattern Histogram).
+Database management with SQLite.
+Web development with Flask.
+Modularization of code (splitting logic into multiple files).
+Exporting data to CSV and Excel.
+Automated model retraining on employee changes.
+Handling multiple work shifts per day.
+------------------------------------------------------------------------------------------------------------------
+** Future Improvements **
+User authentication (admin and employee roles).
+Secure password storage (hashing with Werkzeug).
+Email/SMS notifications on check-in and check-out.
+Visual dashboard with statistics (hours worked, weekly summaries).
+Mobile-friendly interface.
+------------------------------------------------------------------------------------------------------------------
+** How to Run **
+
+# Install dependencies
+pip install -r requirements.txt
+
+# Run the Flask app
+python app.py
+------------------------------------------------------------------------------------------------------------------
+** Disclammer **
+This project is for educational purposes and prototypes. For production, additional security and data privacy measures must be implemented.
 
