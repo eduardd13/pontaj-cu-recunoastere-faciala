@@ -2,7 +2,7 @@
 # Face Recognition Attendance System
 A facial recognition-based attendance application developed in Python with a Flask web interface. This system allows employees to clock in and out using face detection and recognition.
 ------------------------------------------------------------------------------------------------------------------
-** Features
+** Features **
  Employee check-in and check-out using facial recognition.
  Daily attendance records (date, check-in time, check-out time).
  Automatic dataset creation and model training.
