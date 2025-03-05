@@ -7,6 +7,8 @@ import openpyxl
 from flask import Flask, render_template, request, redirect, url_for, send_file
 from datetime import datetime
 
+IS_RENDER = os.environ.get("RENDER") == "TRUE"
+
 app = Flask(__name__)
 
 @app.route('/')
@@ -15,7 +17,10 @@ def index():
     model_status = ""
     if not os.path.exists("trained_model.yml"):
         model_status = "❌ Modelul lipsește! Adaugă angajați și reantrenează modelul."
-    return render_template('index.html', message=message, model_status=model_status)
+
+    is_render = os.environ.get("RENDER") == "TRUE"
+
+    return render_template('index.html', message=message, model_status=model_status, is_render=is_render)
 
 @app.route('/start_check_in')
 def start_check_in():
