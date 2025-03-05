@@ -25,7 +25,7 @@ A facial recognition-based attendance application developed in Python with a Fla
 - Git (for version control)
 - CSV/Excel export with csv and openpyxl libraries.
 ------------------------------------------------------------------------------------------------------------------
-**  How It Works **
+** How It Works**
 Face Capture: When a new employee is added, 20 face images are captured and stored.
 Training: The model is trained automatically based on the images in the dataset.
 Attendance: Using a webcam, the system recognizes the employee and records the check-in or check-out time.
@@ -61,4 +61,3 @@ python app.py
 ------------------------------------------------------------------------------------------------------------------
 ** Disclammer **
 This project is for educational purposes and prototypes. For production, additional security and data privacy measures must be implemented.
-
