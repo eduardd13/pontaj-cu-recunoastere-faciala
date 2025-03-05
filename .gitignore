@@ -1,0 +1,33 @@
+# 🐍 Python
+__pycache__/
+*.py[cod]
+*.pyo
+*.pyd
+*.env
+*.venv
+env/
+venv/
+ENV/
+VENV/
+
+# 🛠️ PyCharm
+.idea/
+
+# 🧪 Logs și debug
+*.log
+
+# 📦 Pachete și build-uri
+*.egg-info/
+dist/
+build/
+
+# 🔒 Fisiere sensibile
+.env
+
+# 📝 Baze de date locale (opțional)
+*.sqlite3
+*.db
+
+# 📊 Rapoarte generate
+*.csv
+*.xlsx
